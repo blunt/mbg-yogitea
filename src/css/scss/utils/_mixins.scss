@@ -1,0 +1,53 @@
+// ------------------------------------------------------------------
+// BREAKPOINT SETTINGS
+// ------------------------------------------------------------------
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media (min-width: 460px) { @content; }
+    }
+}
+
+// ------------------------------------------------------------------
+// WRAPPER SETTINGS
+// ------------------------------------------------------------------
+.wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    @include breakpoint (tablet) {
+        width: 600px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    @include breakpoint (tablet-wide) {
+        width: 900px;
+    }
+    @include breakpoint (desktop) {
+        width: 1200px;
+    }
+    @include breakpoint (desktop-wide) {
+        width: 1600px;
+    }
+}
+
+// ------------------------------------------------------------------
+// TRANSITION SETTINGS
+// ------------------------------------------------------------------
+@mixin transition($property: all, $duration: 0.3s) {
+	transition: $property $duration;
+}
+
+// ------------------------------------------------------------------
+// ICONS
+// ------------------------------------------------------------------
+@mixin icon ($size, $radius: 0px) {
+	width: $size;
+	height: $size;
+	line-height: $size;
+	text-align: center;
+	padding: 0;
+	@if $radius == 'round' {
+		-webkit-border-radius: $size;
+		border-radius: $size;
+	}
+}
