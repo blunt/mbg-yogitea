@@ -55,6 +55,11 @@ function compile() {
         .pipe(gulp.dest('./dist'));
 }
 
+function fonts() {
+    return gulp.src('src/fonts/**/*')
+        .pipe(gulp.dest('dist/fonts'))
+}
+
 function images() {
     return gulp.src('src/images/**/*.+(png|jpg|jpeg|gif|svg)')
         .pipe(cache(imagemin({
@@ -85,4 +90,4 @@ exports.purge = purge;
 exports.compile = compile;
 
 exports.default = gulp.series(sassy, watch);
-exports.build = gulp.series(clean, sassy, compile, purge, images);
+exports.build = gulp.series(clean, sassy, compile, purge, images, fonts);
