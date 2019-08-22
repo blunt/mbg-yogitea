@@ -21,8 +21,8 @@ $yellow-alpha: #EEAD01;
 // ------------------------------------------------------------------
 // FONTS
 // ------------------------------------------------------------------
-$sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif: Georgia, Times, "Times New Roman", serif;
+$sans: "Maax", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: "Fatface", Georgia, Times, "Times New Roman", serif;
 
 $line-height: 1.5;
 
@@ -34,7 +34,7 @@ $bold: 700;
 $text-size: 16px;
 $text-color: #444;
 
-$link-color: #00e;
+$link-color: $yellow-alpha;
 $link-hover-color: darken($link-color, 25%);
 
 // ------------------------------------------------------------------

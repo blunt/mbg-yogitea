@@ -13,31 +13,73 @@
 </head>
 <body>
     <section class="slide-contain">
-        <div class="info-main">
+        <div class="info-wrap">
             <div class="awake">
                 <div class="title">If you <span class="highlight">slept well</span> last night...</div>
-                <div class="content-block">
-                    <div class="num">1</div>
-                    <div class="heading">You’re physically recharged and energized</div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, iste. Voluptas minus nulla, corporis magni consequuntur nihil id laboriosam adipisci omnis maiores? Officia quisquam expedita molestiae eveniet perferendis iste ex!</p>
-                </div>
-            </div>
-            <!-- <div class="tired">
-                <div class="title">If you didn’t slept well last night...</div>
-            </div> -->
+				<div class="content-block first" id="sl1_a1">
+					<a href="#" class="close">Close</a>
+					<div class="num">1</div>
+					<div class="heading">Title Awake 1</div>
+					<p>Go on that morning run: Some studies studies have shown that longer sleep has helped athletes perform faster and with
+					more accuracy.</p>
+				</div>
+				<div class="content-block" id="sl1_a2">
+					<a href="#" class="close">Close</a>
+					<div class="num">2</div>
+					<div class="heading">Title Awake 2</div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+					aliqua.</p>
+				</div>
+				<div class="content-block" id="sl1_a3">
+					<a href="#" class="close">Close</a>
+					<div class="num">3</div>
+					<div class="heading">Title Awake 3</div>
+					<p>Labore et dolore magna aliqua. Purus in massa tempor nec feugiat nisl.</p>
+				</div>
+			</div>
+			<div class="tired">
+				<div class="title">If you <span class="highlight">slept poorly</span> last night...</div>
+				<div class="content-block first" id="sl1_t1">
+					<a href="#" class="close">Close</a>
+					<div class="num">1</div>
+					<div class="heading">Title Tired 1</div>
+					<p>Go on that morning run: Some studies studies have shown that longer sleep has helped athletes perform faster and with more accuracy.</p>
+				</div>
+				<div class="content-block" id="sl1_t2">
+					<a href="#" class="close">Close</a>
+					<div class="num">2</div>
+					<div class="heading">Title Tired 2</div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="content-block" id="sl1_t3">
+					<a href="#" class="close">Close</a>
+					<div class="num">3</div>
+					<div class="heading">Title Tired 3</div>
+					<p>Labore et dolore magna aliqua. Purus in massa tempor nec feugiat nisl.</p>
+				</div>
+			</div>
         </div>
-        <div class="image-main">
+        <div class="image-wrap">
+			<a href="#" class="toggle"><div class="arrow"></div></a>
             <div class="tired">
-                <img src="images/slide1-tired.jpg" alt="">
+				<div class="hot-spots">
+					<a href="#sl1_t1" class="hotspot" style="top: 50%; left: 20%;">1</a>
+					<a href="#sl1_t2" class="hotspot" style="top: 30%; left: 50%;">2</a>
+					<a href="#sl1_t3" class="hotspot" style="top: 20%; left: 60%;">3</a>
+				</div>
+				<img src="images/slide1-tired.jpg" alt="">
             </div>
             <div class="awake">
-                <img src="images/slide1-awake.jpg" alt="">
+				<div class="hot-spots">
+					<a href="#sl1_a1" class="hotspot" style="top: 20%; left: 70%;">1</a>
+					<a href="#sl1_a2" class="hotspot" style="top: 10%; left: 20%;">2</a>
+					<a href="#sl1_a3" class="hotspot" style="top: 50%; left: 40%;">3</a>
+				</div>
+				<img src="images/slide1-awake.jpg" alt="">
             </div>
-            <a href="#" class="toggle">
-                <div class="arrow"></div>
-            </a>
         </div>
     </section>
+
     <!--build:js js/main.min.js -->
     <script src="js/functions.js"></script>
     <!-- endbuild -->
