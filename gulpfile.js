@@ -68,15 +68,17 @@ function images() {
         .pipe(gulp.dest('dist/images'))
 }
 
-function purge() {
-    return gulp.src('./dist/css/*.css')
-        .pipe(
-            purgecss({
-                content: ['./dist/**/*.html']
-            })
-        )
-        .pipe(gulp.dest('./dist/css'))
-}
+/* purgecss start ignore */
+// function purge() {
+//     return gulp.src('./dist/css/*.css')
+//         .pipe(
+//             purgecss({
+//                 content: ['./dist/**/*.html']
+//             })
+//         )
+//         .pipe(gulp.dest('./dist/css'))
+// }
+/* purgecss end ignore */
 
 async function clean() {
     return del.sync(['./dist/**/*']);
@@ -86,8 +88,8 @@ exports.clean = clean;
 exports.images = images;
 exports.sassy = sassy;
 exports.watch = watch;
-exports.purge = purge;
+// exports.purge = purge;
 exports.compile = compile;
 
 exports.default = gulp.series(sassy, watch);
-exports.build = gulp.series(clean, sassy, compile, purge, images, fonts);
+exports.build = gulp.series(clean, sassy, compile, images, fonts);
