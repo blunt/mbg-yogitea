@@ -228,6 +228,7 @@
     display: block;
     background: $yellow-alpha;
     color: $green-alpha !important;
+    font-weight: 700;
     @include icon(26px, round);
     &::after {
         content: "";
