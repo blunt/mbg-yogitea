@@ -1,44 +1,44 @@
 @font-face {
-  font-family: 'Maax';
+  font-family: 'Maax-Regular';
   font-weight: 400;
+  font-display: swap;
   src:  url('../fonts/maax-webfont.woff2') format('woff2'),
         url('../fonts/maax-webfont.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Maax';
+  font-family: 'Maax-Medium';
   font-weight: 500;
+  font-display: swap;
   src:  url('../fonts/maax-medium-webfont.woff2') format('woff2'),
         url('../fonts/maax-medium-webfont.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Fatface';
-  font-weight: 400;
-  src:  url('../fonts/abrilfatface-regular-webfont.woff2') format('woff2'),
-        url('../fonts/abrilfatface-regular-webfont.woff') format('woff');
+body {
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .toggleSlider {
     font-size: $text-size;
-	font-family: $font-family;
+	font-family: $reg;
 	line-height: $line-height;
 	color: $text-color;
     position: relative;
-    display: flex;
+    display: flex !important;
+    max-width: calc(100% - 320px);
     flex-direction: column;
     align-items: center;
     background: #FAF7F5;
     padding: 25px;
-    max-width: 2000px;
     margin: 0 auto;
     @include breakpoint (desktop) {
         flex-direction: row;
-        align-items: flex-end;
+        align-items: flex-start;
     }
     & * {
         transition: all, 0.5s;
-        display: border-box;
+        box-sizing: border-box;
     }
     a {
         color: $link-color;
@@ -51,7 +51,7 @@
         @extend %flatten;
     }
     img {
-        display: block;
+        display: block !important;
 	    max-width: 100%;
     }
     ::-moz-selection { background: $link-color; color: $white; text-shadow: none; }
@@ -77,10 +77,10 @@
         width: 100%;
     }
     .toggleSlider__info-wrap--tired {
-        display: block;
+        display: block !important;
     }
     .toggleSlider__info-wrap--awake {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -90,24 +90,25 @@
     @include breakpoint (desktop) {
         width: 50%;
         margin: 0;
-        padding: 5vw;
+        padding: 150px 75px 75px;
     }
 }
 
 .toggleSlider__info-wrap--hidden, .toggleSlider__info-wrap--tired {
-    display: none;
+    display: none !important;
 }
 
 .toggleSlider__info-wrap__title {
     color: $yellow-alpha;
     font-size: 34px;
     line-height: 1.2;
-    font-weight: 500;
+    font-family: $med;
     @include breakpoint (tablet) {
-        font-size: calc(45px + 0.5vw);
+        font-size: 45px;
     }
     @include breakpoint (desktop) {
         max-width: 480px;
+        font-size: 50px;
     }
 }
 
@@ -121,7 +122,7 @@
 }
 
 .toggleSlider__info-wrap__content-block {
-    display: none;
+    display: none !important;
     position: absolute;
     left: 25px;
     right: 25px;
@@ -131,11 +132,11 @@
     border: 15px solid $white;
     padding: 50px;
     @include breakpoint (tablet) {
-        font-size: calc(13px + 0.5vw);
+        font-size: 20px;
     }
     @include breakpoint(desktop) {
         position: relative;
-        margin-top: 5vw;
+        margin-top: 75px;
         padding: 0 0 0 60px;
         height: auto !important;
         border: 0;
@@ -153,17 +154,16 @@
     font-size: 12px;
     text-transform: uppercase;
     @include breakpoint (desktop) {
-        display: none;
+        display: none !important;
     }
 }
 
 .toggleSlider__info-wrap__content-block--visible {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
     @include breakpoint (desktop) {
-        display: block;
-        min-height: 30vw;
+        display: block !important;
     }
 }
 
@@ -186,11 +186,11 @@
 
 .toggleSlider__info-wrap__heading {
     font-size: 26px;
-    font-weight: 500;
+    font-family: $med;
     line-height: 1.2;
     color: $yellow-alpha;
     @include breakpoint (tablet) {
-        font-size: calc(26px + 0.25vw);
+        font-size: 28px;
     }
 }
 
@@ -225,7 +225,7 @@
 
 .toggleSlider__hotspots__hotspot {
     position: absolute;
-    display: block;
+    display: block !important;
     background: $yellow-alpha;
     color: $green-alpha !important;
     font-weight: 700;
@@ -267,7 +267,7 @@
     background: $yellow-alpha;
     &::before {
         content: "";
-        display: block;
+        display: block !important;
         position: absolute;
         width: 15px;
         height: 15px;
