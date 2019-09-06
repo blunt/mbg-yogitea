@@ -14,11 +14,6 @@
         url('../fonts/maax-medium-webfont.woff') format('woff');
 }
 
-body {
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
 .toggleSlider {
     font-size: $text-size;
 	font-family: $reg;
@@ -26,7 +21,6 @@ body {
 	color: $text-color;
     position: relative;
     display: flex !important;
-    max-width: calc(100% - 320px);
     flex-direction: column;
     align-items: center;
     background: #FAF7F5;

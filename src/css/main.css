@@ -16,10 +16,6 @@
   font-display: swap;
   src: url("../fonts/maax-medium-webfont.woff2") format("woff2"), url("../fonts/maax-medium-webfont.woff") format("woff"); }
 
-body {
-  max-width: 1440px;
-  margin: 0 auto; }
-
 .toggleSlider {
   font-size: 16px;
   font-family: "Maax-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -29,7 +25,6 @@ body {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
-  max-width: calc(100% - 320px);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
