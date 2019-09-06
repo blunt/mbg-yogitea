@@ -136,7 +136,7 @@
   left: 25px;
   right: 25px;
   bottom: 25px;
-  z-index: 2000;
+  z-index: 75;
   background: #FAF7F5;
   border: 15px solid #fff;
   padding: 50px; }
@@ -221,7 +221,7 @@
   left: 0;
   width: 0px;
   overflow: hidden;
-  z-index: 500; }
+  z-index: 25; }
   .toggleSlider__image-wrap--tired img {
     max-width: none; }
 
@@ -249,8 +249,8 @@
     left: 50%;
     border: 4px solid #EEAD01;
     border-radius: 100%;
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
@@ -266,7 +266,7 @@
 
 .toggleSlider__toggle {
   position: absolute;
-  z-index: 1000;
+  z-index: 50;
   top: 0;
   left: 0;
   height: 100%;
