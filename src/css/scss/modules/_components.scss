@@ -126,7 +126,7 @@
     border: 15px solid $white;
     padding: 50px;
     @include breakpoint (tablet) {
-        font-size: 20px;
+        font-size: 18px;
     }
     @include breakpoint(desktop) {
         position: relative;
@@ -183,6 +183,7 @@
     font-family: $med;
     line-height: 1.2;
     color: $yellow-alpha;
+    padding-bottom: 15px;
     @include breakpoint (tablet) {
         font-size: 28px;
     }
