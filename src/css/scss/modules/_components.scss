@@ -248,7 +248,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    border-left: 10px solid $yellow-alpha;
+    border-left: 10px solid $orange-alpha;
 }
 
 .toggleSlider__toggle__arrow {
@@ -259,7 +259,7 @@
     width: 80px;
     height: 80px;
     border-radius: 100%;
-    background: $yellow-alpha;
+    background: $orange-alpha;
     &::before {
         content: "";
         display: block !important;

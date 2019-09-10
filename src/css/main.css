@@ -271,7 +271,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  border-left: 10px solid #EEAD01; }
+  border-left: 10px solid #E4694B; }
 
 .toggleSlider__toggle__arrow {
   position: absolute;
@@ -283,7 +283,7 @@
   width: 80px;
   height: 80px;
   border-radius: 100%;
-  background: #EEAD01; }
+  background: #E4694B; }
   .toggleSlider__toggle__arrow::before {
     content: "";
     display: block !important;
