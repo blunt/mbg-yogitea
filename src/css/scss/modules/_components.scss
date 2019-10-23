@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Maax-Medium';
-  font-weight: 500;
+  font-weight: 600;
   font-display: swap;
   src:  url('../fonts/maax-medium-webfont.woff2') format('woff2'),
         url('../fonts/maax-medium-webfont.woff') format('woff');
@@ -17,8 +17,61 @@
 .toggleSlider {
     background: $body-color;
     font-family: $sans;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
     @include breakpoint (desktop) {
     }
-    ::-moz-selection { background: $link-color; color: $white; text-shadow: none; }
-    ::selection { background: $link-color; color: $white; text-shadow: none; }
+    ::-moz-selection { }
+    ::selection { }
+
+    &__section {
+        display: flex;
+        width: 100vw;
+        &--absolute {
+            position: absolute;
+            transition: transform .6s ease-in-out;
+        }
+        &--morning {
+            transform: translateX(100%) translateX(-50 * 3px);
+            background: red;
+        }
+        &--morning.toggleSlider__section--open {
+            transform: translateX(50px);
+        }
+        &--afternoon {
+            transform: translateX(100%) translateX(-50 * 2px);
+            background: blue;
+        }
+        &--afternoon.toggleSlider__section--open {
+            transform: translateX(50 * 2px);
+        }
+        &--evening {
+            transform: translateX(100%) translateX(-50px);
+            background: purple;
+        }
+        &--evening.toggleSlider__section--open {
+            transform: translateX(50 * 3px);
+        }
+    }
+
+
+    &__section__title {
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: $white;
+        padding: 16px;
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        &--tea {
+            background: $green-500;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
