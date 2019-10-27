@@ -20,6 +20,8 @@
     overflow: hidden;
     position: relative;
     color: $text-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     ::selection {
         background: $green-500;

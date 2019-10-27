@@ -15,7 +15,9 @@
   font-family: "Maax-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden;
   position: relative;
-  color: #222; }
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
   .toggleSlider ::-moz-selection {
     background: #CBDB2E;
     color: #fff; }
