@@ -328,7 +328,12 @@
     font-size: 24px;
     font-weight: 600;
     text-transform: uppercase;
-    background: #CBDB2E; }
+    background: #CBDB2E;
+    -webkit-transition: background-color .1s ease-in;
+    -o-transition: background-color .1s ease-in;
+    transition: background-color .1s ease-in; }
+    .toggleSlider__section__title:hover {
+      background: #bdcc23; }
     @media (min-width: 1028px) {
       .toggleSlider__section__title {
         width: 50px;
@@ -344,10 +349,16 @@
                 flex-direction: column; } }
     .toggleSlider__section__title--morning {
       background: #FFD255; }
+      .toggleSlider__section__title--morning:hover {
+        background: #ffcb3c; }
     .toggleSlider__section__title--afternoon {
       background: #9FCCDF; }
+      .toggleSlider__section__title--afternoon:hover {
+        background: #8cc2d9; }
     .toggleSlider__section__title--evening {
       background: #005676; }
+      .toggleSlider__section__title--evening:hover {
+        background: #00435d; }
     .toggleSlider__section__title:hover {
       cursor: pointer; }
 

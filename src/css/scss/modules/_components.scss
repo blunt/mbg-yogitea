@@ -330,6 +330,10 @@
         font-weight: 600;
         text-transform: uppercase;
         background: $green-500;
+        transition: background-color .1s ease-in;
+        &:hover {
+            background: darken($green-500, 5%);
+        }
         @include breakpoint (desktop) {
             width: 50px;
             display: flex;
@@ -338,12 +342,21 @@
         }
         &--morning {
             background: $yellow-500;
+            &:hover {
+                background: darken($yellow-500, 5%);
+            }
         }
         &--afternoon {
             background: $blue-500;
+            &:hover {
+                background: darken($blue-500, 5%);
+            }
         }
         &--evening {
             background: $blue-900;
+            &:hover {
+                background: darken($blue-900, 5%);
+            }
         }
         &:hover {
             cursor: pointer;
