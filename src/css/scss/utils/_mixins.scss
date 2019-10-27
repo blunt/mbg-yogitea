@@ -2,11 +2,14 @@
 // BREAKPOINT SETTINGS
 // ------------------------------------------------------------------
 @mixin breakpoint($point) {
-    @if $point == tablet {
+    @if $point == mobile {
         @media (min-width: 460px) { @content; }
     }
+	@if $point == large-desktop {
+		@media (min-width: 1140px) { @content; }
+	}
     @if $point == desktop {
-        @media (min-width: 1028px) { @content; }
+        @media (min-width: 1024px) { @content; }
 	}
 	// @if $point == desktop {
     //     @media (min-width: 940px) { @content; }
