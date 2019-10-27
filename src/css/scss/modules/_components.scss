@@ -175,7 +175,7 @@
         }
         p {
             font-size: 16px;
-            line-height: 125%;
+            line-height: 1.5rem;
             margin-top: 0;
             @include breakpoint (large-desktop) {
                 font-size: 18px;
@@ -204,6 +204,7 @@
                     width: 100%;
                     display: block;
                     object-fit: cover;
+                    backface-visibility: hidden;
                     @include breakpoint (desktop) {
                         display: block;
                         position: absolute;
@@ -252,13 +253,13 @@
                     margin-top: auto;
                 }
                 .toggleSlider__section__content__image {
-                    font-size: 15px;
                 }
                 &__title {
                     font-weight: 600;
                     text-transform: uppercase;
                     letter-spacing: .1rem;
                     margin-bottom: 10px;
+                    font-size: 15px;
                 }
                 div {
                     display: flex;
@@ -271,6 +272,8 @@
                 }
                 p {
                     max-width: 60%;
+                    font-size: 15px;
+                    line-height: 1.35rem;
                 }
             }
         }
