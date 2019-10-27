@@ -17,58 +17,333 @@
 .toggleSlider {
     background: $body-color;
     font-family: $sans;
-    display: flex;
     overflow: hidden;
     position: relative;
+    color: $text-color;
 
-    @include breakpoint (desktop) {
+    ::selection {
+        background: $green-500;
+        color: #fff;
     }
-    ::-moz-selection { }
-    ::selection { }
+
+    &__padding {
+        margin: 20px;
+        overflow: hidden;
+        border-radius: 5px;
+        -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+        @include breakpoint (desktop) {
+            margin: 50px;
+            position: relative;
+        }
+    }
+
+    &__wrapper {
+        background: #fff;
+        display: flex;
+        width: 400%;
+        transition: transform .6s ease-in-out;
+
+        @include breakpoint (desktop) {
+            width: auto;
+        }
+
+        &--two {
+            transform: translateX(-25%);
+            @include breakpoint (desktop) {
+                transform: translateX(0);
+            }
+        }
+
+        &--three {
+            transform: translateX(-50%);
+            @include breakpoint (desktop) {
+                transform: translateX(0);
+            }
+        }
+
+        &--four {
+            transform: translateX(-75%);
+            @include breakpoint (desktop) {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__navigation {
+        position: fixed;
+        display: flex;
+        bottom: 30px;
+        left: 30px;
+        right: 30px;
+        z-index: 10;
+        @include breakpoint (desktop) {
+            display: none;
+        }
+
+        &__button {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background: $green-500;
+            text-align: center;
+            border: 0;
+            transition: all .1s ease-in;
+            svg {
+                width: 15px;
+                height: auto;
+            }
+            &:focus {
+                outline: none;
+            }
+            &--prev {
+                padding-left: 3px;
+            }
+            &--next {
+                margin-left: auto;
+                padding-right: 3px;
+            }
+            &--hidden {
+                opacity: 0;
+                pointer-events: none;
+                @include breakpoint (desktop) {
+                    pointer-events: auto;
+                    opacity: 1;
+                }
+            }
+            &:active {
+                transform: scale(.9,.9);
+            }
+        }
+    }
 
     &__section {
-        display: flex;
-        width: 100vw;
+        width: 100%;
+        height: calc(100vh - 40px);
+        background: white;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        @include breakpoint (desktop) {
+            width: calc(100% - 150px);
+            display: flex;
+            height: 100%;
+            overflow: hidden;
+        }
         &--absolute {
-            position: absolute;
             transition: transform .6s ease-in-out;
+            @include breakpoint (desktop) {
+                position: absolute;
+            }
         }
         &--morning {
-            transform: translateX(100%) translateX(-50 * 3px);
-            background: red;
+            @include breakpoint (desktop) {
+                transform: translateX(100%);
+            }
         }
         &--morning.toggleSlider__section--open {
-            transform: translateX(50px);
-        }
+            @include breakpoint (desktop) {
+                transform: translateX(50px);
+
+            }        }
         &--afternoon {
-            transform: translateX(100%) translateX(-50 * 2px);
-            background: blue;
+            @include breakpoint (desktop) {
+                transform: translateX(100%) translateX(50px);
+            }
         }
         &--afternoon.toggleSlider__section--open {
-            transform: translateX(50 * 2px);
+            @include breakpoint (desktop) {
+                transform: translateX(50 * 2px);
+            }
         }
         &--evening {
-            transform: translateX(100%) translateX(-50px);
-            background: purple;
+            @include breakpoint (desktop) {
+                transform: translateX(100%) translateX(100px);
+            }
         }
         &--evening.toggleSlider__section--open {
-            transform: translateX(50 * 3px);
+            @include breakpoint (desktop) {
+                transform: translateX(50 * 3px);
+            }
+        }
+    }
+
+    &__section__content {
+        width: 100%;
+        @include breakpoint (desktop) {
+            padding: 30px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 125%;
+            margin-top: 0;
+            @include breakpoint (desktop) {
+                font-size: 18px;
+            }
+        }
+        a {
+            color: $text-color;
+            font-weight: 600;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        &--portrait {
+            @include breakpoint (desktop) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .toggleSlider__section__content__image {
+                overflow: hidden;
+                position: relative;
+                @include breakpoint (desktop) {
+                    width: 60%;
+                }
+                img {
+                    height: auto;
+                    width: 100%;
+                    display: block;
+                    object-fit: cover;
+                    @include breakpoint (desktop) {
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        min-height: 100%;
+                        min-width: 100%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+            .toggleSlider__section__content__text {
+                padding: 30px 30px 90px 30px;
+                display: flex;
+                flex-direction: column;
+                @include breakpoint (desktop) {
+                    width: 40%;
+                    padding: 30px 30px 0 30px;
+                }
+                h2 {
+                    font-size: 54px;
+                    line-height: 90%;
+                    font-weight: 400;
+                    margin: 0;
+                    &.secondWord {
+                        margin-bottom: 20px;
+                    }
+                    @include breakpoint (desktop) {
+                        font-size: 72px;
+                        &.secondWord {
+                            margin-bottom: 50px;
+                        }
+                    }
+                    div {
+                        width: 100%;
+                        display: flex;
+                    }
+                }
+            }
+            .toggleSlider__section__content__sponsored {
+                margin-top: 60px;
+                @include breakpoint (desktop) {
+                    margin-top: auto;
+                }
+                .toggleSlider__section__content__image {
+                    font-size: 15px;
+                }
+                &__title {
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: .1rem;
+                    margin-bottom: 10px;
+                }
+                div {
+                    display: flex;
+                    align-items: start;
+                }
+                img {
+                    width: 90px;
+                    margin-right: 15px;
+                    display: block;
+                }
+                p {
+                    max-width: 60%;
+                }
+            }
+        }
+        &--tea {
+            padding: 30px 30px 90px 30px;
+            @include breakpoint (desktop) {
+                padding: 80px 30px 60px 30px;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 30px;
+                display: block;
+            }
+            .toggleSlider__section__content__text {
+                @include breakpoint (desktop) {
+                    display: flex;
+                }
+                &__heading {
+                    display: flex;
+                    flex-direction: column;
+                    @include breakpoint (tablet) {
+                        width: 50%
+                    }
+                    @include breakpoint (desktop) {
+                        padding-right: 10%;
+                    }
+                }
+                &__description {
+                    margin-top: 30px;
+                    @include breakpoint (desktop) {
+                        margin-top: 90px;
+                    }
+                    @include breakpoint (desktop) {
+                        width: 50%;
+                    }
+                }
+                h2 {
+                    font-size: 78px;
+                    font-weight: 400;
+                    line-height: 78%;
+                    margin: 0;
+                    display: flex;
+                    @include breakpoint (desktop) {
+                        font-size: 120px;
+                    }
+                }
+                .right {
+                    margin-left: auto;
+                }
+            }
         }
     }
 
 
     &__section__title {
-        width: 50px;
-        display: flex;
-        flex-direction: column;
+        width: 100%;
         text-align: center;
         color: $white;
         padding: 16px;
         font-size: 24px;
         font-weight: 600;
         text-transform: uppercase;
-        &--tea {
-            background: $green-500;
+        background: $green-500;
+        @include breakpoint (desktop) {
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        &--morning {
+            background: $yellow-500;
+        }
+        &--afternoon {
+            background: $blue-500;
+        }
+        &--evening {
+            background: $blue-900;
         }
         &:hover {
             cursor: pointer;
