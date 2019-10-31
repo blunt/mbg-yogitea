@@ -171,7 +171,8 @@
     &__section__content {
         width: 100%;
         @include breakpoint (desktop) {
-            padding: 30px;
+            margin: 30px;
+            overflow: hidden;
         }
         p {
             font-size: 16px;
@@ -184,8 +185,13 @@
         a {
             color: $text-color;
             font-weight: 600;
+            transition: all .1s ease;
+            &:visited {
+                color: $text-color;
+            }
             &:hover {
-                text-decoration: none;
+                background: $green-500;
+                color: #fff;
             }
         }
         &--portrait {
@@ -248,7 +254,7 @@
                 }
             }
             .toggleSlider__section__content__sponsored {
-                margin-top: 60px;
+                margin-top: 30px;
                 @include breakpoint (desktop) {
                     margin-top: auto;
                 }
@@ -261,9 +267,21 @@
                     margin-bottom: 10px;
                     font-size: 15px;
                 }
-                div {
+                &__content {
                     display: flex;
                     align-items: start;
+                    text-decoration: none;
+                    span {
+                        text-decoration: underline;
+                    }
+                    &:hover {
+                        background: #fff;
+                        color: $text-color;
+                        span {
+                            background: $green-500;
+                            color: #fff;
+                        }
+                    }
                 }
                 img {
                     width: 90px;
@@ -278,7 +296,7 @@
             }
         }
         &--tea {
-            padding: 30px 30px 90px 30px;
+            padding: 0 0 90px 0;
             @include breakpoint (desktop) {
                 padding: 80px 30px 60px 30px;
             }
@@ -289,8 +307,10 @@
                 display: block;
             }
             .toggleSlider__section__content__text {
+                padding: 30px;
                 @include breakpoint (desktop) {
                     display: flex;
+                    padding: 0;
                 }
                 &__heading {
                     display: flex;
@@ -304,11 +324,15 @@
                 }
                 &__description {
                     margin-top: 30px;
-                    @include breakpoint (desktop) {
-                        margin-top: 90px;
+                    span {
+                        display: none;
                     }
                     @include breakpoint (desktop) {
+                        margin-top: 90px;
                         width: 50%;
+                        span {
+                            display: inline;
+                        }
                     }
                 }
                 h2 {
@@ -333,41 +357,46 @@
         width: 100%;
         text-align: center;
         color: $white;
-        padding: 16px;
+        padding: 6px;
         font-size: 24px;
         font-weight: 600;
         text-transform: uppercase;
         background: $green-500;
         transition: background-color .1s ease-in;
-        &:hover {
-            background: darken($green-500, 5%);
-        }
         @include breakpoint (desktop) {
+            padding: 16px;
             width: 50px;
             display: flex;
             justify-content: center;
             flex-direction: column;
+            &:hover {
+                cursor: pointer;
+                background: darken($green-500, 5%);
+            }
         }
         &--morning {
             background: $yellow-500;
-            &:hover {
-                background: darken($yellow-500, 5%);
+            @include breakpoint (desktop) {
+                &:hover {
+                    background: darken($yellow-500, 5%);
+                }
             }
         }
         &--afternoon {
             background: $blue-500;
-            &:hover {
-                background: darken($blue-500, 5%);
+            @include breakpoint (desktop) {
+                &:hover {
+                    background: darken($blue-500, 5%);
+                }
             }
         }
         &--evening {
             background: $blue-900;
-            &:hover {
-                background: darken($blue-900, 5%);
+            @include breakpoint (desktop) {
+                &:hover {
+                    background: darken($blue-900, 5%);
+                }
             }
-        }
-        &:hover {
-            cursor: pointer;
         }
     }
 }
