@@ -6,7 +6,7 @@
         @media (min-width: 460px) { @content; }
     }
 	@if $point == large-desktop {
-		@media (min-width: 1140px) { @content; }
+		@media (min-width: 1200px) { @content; }
 	}
     @if $point == desktop {
         @media (min-width: 1024px) { @content; }
