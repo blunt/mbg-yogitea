@@ -12,6 +12,7 @@
 
 .toggleSlider {
   width: 100vw;
+  max-width: 1440px;
   background: #F8F1EB;
   font-family: "Maax-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden;
