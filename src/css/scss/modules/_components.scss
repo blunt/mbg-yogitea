@@ -44,7 +44,7 @@
     &__wrapper {
         background: #fff;
         display: flex;
-        width: 400%;
+        width: 500%;
         transition: transform .6s ease-in-out;
 
         @include breakpoint (desktop) {
@@ -52,21 +52,27 @@
         }
 
         &--two {
-            transform: translateX(-25%);
+            transform: translateX(-20%);
             @include breakpoint (desktop) {
                 transform: translateX(0);
             }
         }
 
         &--three {
-            transform: translateX(-50%);
+            transform: translateX(-40%);
             @include breakpoint (desktop) {
                 transform: translateX(0);
             }
         }
 
         &--four {
-            transform: translateX(-75%);
+            transform: translateX(-60%);
+            @include breakpoint (desktop) {
+                transform: translateX(0);
+            }
+        }
+        &--five {
+            transform: translateX(-80%);
             @include breakpoint (desktop) {
                 transform: translateX(0);
             }
@@ -128,7 +134,7 @@
         overflow-y: scroll;
         overflow-x: hidden;
         @include breakpoint (desktop) {
-            width: calc(100% - 150px);
+            width: calc(100% - 200px);
             display: flex;
             height: 100%;
             overflow: hidden;
@@ -168,6 +174,35 @@
             @include breakpoint (desktop) {
                 transform: translateX(50 * 3px);
             }
+        }
+        &--friday {
+            @include breakpoint (desktop) {
+                transform: translateX(100%) translateX(150px);
+            }
+        }
+        &--friday.toggleSlider__section--open {
+            @include breakpoint (desktop) {
+                transform: translateX(50 * 4px);
+            }
+        }
+    }
+
+    // .desktop {
+    //     display: none !important;
+    // }
+    @include breakpoint (desktop) {
+        .mobile {
+            display: none !important;
+        }
+        // .desktop {
+        //     display: block !important;
+        // }
+    }
+
+    .toggleSlider__section__content__text__heading.mobile-break {
+        display: block;
+        @include breakpoint (desktop) {
+            display: flex;
         }
     }
 
@@ -246,7 +281,7 @@
                         font-size: 54px;
                     }
                     @include breakpoint (large-desktop) {
-                        font-size: 72px;
+                        font-size: 54px;
                         &.secondWord {
                             margin-bottom: 50px;
                         }
@@ -257,83 +292,68 @@
                     }
                 }
             }
-            .toggleSlider__section__content__sponsored {
-                margin-top: 30px;
-                @include breakpoint (desktop) {
-                    margin-top: auto;
+        }
+        .toggleSlider__section__content__sponsored {
+            margin-top: 30px;
+            @include breakpoint (desktop) {
+                margin-top: auto;
+            }
+            .toggleSlider__section__content__image {
+            }
+            &__title {
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: .1rem;
+                margin-bottom: 10px;
+                font-size: 15px;
+            }
+            &__content {
+                display: flex;
+                align-items: start;
+                text-decoration: none;
+                span {
+                    text-decoration: underline;
                 }
-                .toggleSlider__section__content__image {
-                }
-                &__title {
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    letter-spacing: .1rem;
-                    margin-bottom: 10px;
-                    font-size: 15px;
-                }
-                &__content {
-                    display: flex;
-                    align-items: start;
-                    text-decoration: none;
+                &:hover {
+                    background: #fff;
+                    color: $text-color;
                     span {
-                        text-decoration: underline;
-                    }
-                    &:hover {
-                        background: #fff;
-                        color: $text-color;
-                        span {
-                            background: $green-500;
-                            color: #fff;
-                        }
+                        background: $green-500;
+                        color: #fff;
                     }
                 }
-                img {
-                    width: 90px;
-                    margin-right: 15px;
-                    display: block;
-                }
-                p {
-                    max-width: 60%;
-                    font-size: 15px;
-                    line-height: 1.35rem;
-                }
+            }
+            img {
+                width: 90px;
+                margin-right: 15px;
+                display: block;
+            }
+            p {
+                max-width: 60%;
+                font-size: 15px;
+                line-height: 1.35rem;
             }
         }
         &--tea {
             padding: 0 0 90px 0;
             @include breakpoint (desktop) {
-                padding: 80px 30px 60px 30px;
+                padding: 30px 30px 00px 30px;
             }
             img {
                 width: 100%;
                 height: auto;
-                margin-bottom: 30px;
                 display: block;
             }
             .toggleSlider__section__content__text {
                 padding: 30px;
-                @include breakpoint (desktop) {
-                    display: flex;
-                    padding: 0;
-                }
-                &__heading {
-                    display: flex;
-                    flex-direction: column;
-                    @include breakpoint (mobile) {
-                        width: 50%
-                    }
-                    @include breakpoint (desktop) {
-                        padding-right: 10%;
-                    }
-                }
                 &__description {
                     margin-top: 30px;
+                    margin-bottom: 30px;
                     .desktop {
                         display: none;
                     }
                     @include breakpoint (desktop) {
-                        margin-top: 90px;
-                        width: 50%;
+                        margin-top: 40px;
                         .mobile {
                             display: none;
                         }
@@ -344,13 +364,13 @@
                 }
                 h2 {
                     font-family: Maax-Regular,"Helvetica Neue",Helvetica,Arial,sans-serif;
-                    font-size: 78px;
+                    font-size: 54px;
                     font-weight: 400;
                     line-height: 78%;
                     margin: 0;
                     display: flex;
                     @include breakpoint (desktop) {
-                        font-size: 120px;
+                        font-size: 72px;
                     }
                 }
                 .right {
@@ -387,6 +407,14 @@
             @include breakpoint (desktop) {
                 &:hover {
                     background: darken($yellow-500, 5%);
+                }
+            }
+        }
+        &--friday {
+            background: #003D76;
+            @include breakpoint (desktop) {
+                &:hover {
+                    background: darken(#003D76, 5%);
                 }
             }
         }

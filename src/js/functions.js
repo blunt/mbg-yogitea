@@ -24,9 +24,17 @@ next.addEventListener("click", function (event) {
             document.querySelectorAll(".toggleSlider__section--afternoon")[0].classList.add("toggleSlider__section--animated");
             break;
         case cls.contains('toggleSlider__wrapper--three'):
-            this.classList.add('toggleSlider__navigation__button--hidden');
             wrapper.classList.remove('toggleSlider__wrapper--three');
             wrapper.classList.add('toggleSlider__wrapper--four');
+            for (const title of titles) {
+                title.parentElement.classList.remove("toggleSlider__section--animated");
+            }
+            document.querySelectorAll(".toggleSlider__section--evening")[0].classList.add("toggleSlider__section--animated");
+            break;
+        case cls.contains('toggleSlider__wrapper--four'):
+            this.classList.add('toggleSlider__navigation__button--hidden');
+            wrapper.classList.remove('toggleSlider__wrapper--five');
+            wrapper.classList.add('toggleSlider__wrapper--five');
             for (const title of titles) {
                 title.parentElement.classList.remove("toggleSlider__section--animated");
             }
@@ -39,8 +47,16 @@ prev.addEventListener("click", function (event) {
     const wrapper = this.parentElement.nextElementSibling
     const cls = wrapper.classList;
     switch (true) {
-        case cls.contains('toggleSlider__wrapper--four'):
+        case cls.contains('toggleSlider__wrapper--five'):
             this.nextElementSibling.classList.remove('toggleSlider__navigation__button--hidden');
+            wrapper.classList.remove('toggleSlider__wrapper--five');
+            wrapper.classList.add('toggleSlider__wrapper--four');
+            for (const title of titles) {
+                title.parentElement.classList.remove("toggleSlider__section--open");
+            }
+            document.querySelectorAll(".toggleSlider__section--afternoon")[0].classList.add("toggleSlider__section--open");
+            break;
+        case cls.contains('toggleSlider__wrapper--four'):
             wrapper.classList.remove('toggleSlider__wrapper--four');
             wrapper.classList.add('toggleSlider__wrapper--three');
             for (const title of titles) {
@@ -109,12 +125,24 @@ for (const title of titles) {
                 for (const title of titles) {
                     if (title.parentElement.classList.contains('toggleSlider__section--morning') || title.parentElement.classList.contains('toggleSlider__section--afternoon')) {
                         title.parentElement.classList.add("toggleSlider__section--open");
+                    } else {
+                        title.parentElement.classList.remove("toggleSlider__section--open");
                     }
                     title.parentElement.classList.remove('toggleSlider__section--animated');
                 }
                 this.parentElement.classList.toggle('toggleSlider__section--open');
                 this.parentElement.classList.toggle('toggleSlider__section--animated');
                 break;
+            case cls.contains('toggleSlider__section--friday'):
+                    for (const title of titles) {
+                        if (title.parentElement.classList.contains('toggleSlider__section--morning') || title.parentElement.classList.contains('toggleSlider__section--afternoon')  || title.parentElement.classList.contains('toggleSlider__section--evening')) {
+                            title.parentElement.classList.add("toggleSlider__section--open");
+                        }
+                        title.parentElement.classList.remove('toggleSlider__section--animated');
+                    }
+                    this.parentElement.classList.toggle('toggleSlider__section--open');
+                    this.parentElement.classList.toggle('toggleSlider__section--animated');
+                    break;
             case cls.contains('toggleSlider__section--tea'):
                 for (const title of titles) {
                     title.parentElement.classList.remove("toggleSlider__section--open");
