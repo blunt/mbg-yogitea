@@ -86,7 +86,7 @@
               -ms-transform: translateX(0);
                   transform: translateX(0); } }
   .toggleSlider__navigation {
-    position: fixed;
+    position: absolute;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -109,7 +109,8 @@
       transition: all .1s ease-in; }
       .toggleSlider__navigation__button svg {
         width: 15px;
-        height: auto; }
+        height: auto;
+        margin-left: 12px; }
       .toggleSlider__navigation__button:focus {
         outline: none; }
       .toggleSlider__navigation__button--prev {
