@@ -38,7 +38,7 @@ next.addEventListener("click", function (event) {
             for (const title of titles) {
                 title.parentElement.classList.remove("toggleSlider__section--animated");
             }
-            document.querySelectorAll(".toggleSlider__section--evening")[0].classList.add("toggleSlider__section--animated");
+            document.querySelectorAll(".toggleSlider__section--friday")[0].classList.add("toggleSlider__section--animated");
             break;
     }
 });
