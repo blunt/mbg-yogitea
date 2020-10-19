@@ -195,7 +195,9 @@
     display: none !important; }
   @media (min-width: 1024px) {
     .toggleSlider .mobile {
-      display: none !important; } }
+      display: none !important; }
+    .toggleSlider .desktop {
+      display: block !important; } }
   .toggleSlider .toggleSlider__section__content__text__heading.mobile-break {
     display: block; }
     @media (min-width: 1024px) {
